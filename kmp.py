@@ -30,5 +30,8 @@ def kmpStringMatcher(text, pattern):
             else:
                 i += 1
                 
-    return indexes
+    if not indexes:
+        return "---None---"
+    else:
+        return indexes
         
