@@ -10,4 +10,7 @@ def naiveStringMatcher(text, pattern):
             if j == n - 1 and text[i+j] == pattern[j]:
                 indexes.append(i)
                 
-    return indexes
+    if not indexes:
+        return "---None---"
+    else:
+        return indexes
