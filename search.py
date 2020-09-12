@@ -1,5 +1,6 @@
 from algo.naive import naiveStringMatcher
 from algo.kmp import kmpStringMatcher
+from algo.bmh import boyerMooreHorspoolStringMatcher
 from timeit import default_timer as timer
 
 import sys
@@ -44,6 +45,27 @@ if __name__ == "__main__":
         print('Indexes found:')
         if indexOfOccurencesKmp:
             print(indexOfOccurencesKmp)
+        else:
+            print('No index of occurences found!')
+        print('')
+
+        print('Time elapsed: ' + str(end - start))
+        
+        print('---------------------------------------------')
+        print('')
+
+        # Using BMH Algorithm
+        print('---------------------------------------------')
+        print('Boyer-Moore-Horspool (BMH) Algorithm')
+        print('')
+
+        start = timer()
+        indexOfOccurencesBmh = boyerMooreHorspoolStringMatcher(genomeSequence, pattern)
+        end = timer()
+
+        print('Indexes found:')
+        if indexOfOccurencesBmh:
+            print(indexOfOccurencesBmh)
         else:
             print('No index of occurences found!')
         print('')
