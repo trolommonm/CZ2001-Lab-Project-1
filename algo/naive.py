@@ -2,7 +2,7 @@ def naiveStringMatcher(text, pattern):
     indexes = []
     m = len(text)
     n = len(pattern)
-    for i in range(0, m - n):
+    for i in range(0, m - n + 1):
         for j in range(0, n):
             if text[i+j] != pattern[j]:
                 break

@@ -17,15 +17,15 @@ def kmpStringMatcher(text, pattern):
     i = 0
     while (i < m):
         if text[i] == pattern[j]:
-            if j == n - 1:
-                indexes.append(i - n + 1)
-                j = lpsArray[max(j - 1, 0)]
-            else:
-                j += 1
-                i += 1
-        else:
+            i += 1
+            j += 1
+
+        if j == n:
+            indexes.append(i - n)
+            j = lpsArray[j-1]
+        elif i < m and text[i] != pattern[j]:
             if j > 0:
-                j = lpsArray[max(j - 1, 0)]
+                j = lpsArray[j-1]
             else:
                 i += 1
                 
